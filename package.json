@@ -1,0 +1,28 @@
+{
+  "name": "ais-decoder",
+  "version": "1.0.0",
+  "description": "Decode AIS iformation received as NMEA messages.",
+  "main": "main.js",
+  "dependencies": {
+    "@types/node": "^11.13.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThierryGandilhon/ais-decoder.git"
+  },
+  "keywords": [
+    "node",
+    "AIS",
+    "NMEA"
+  ],
+  "author": "Thierry Gandilhon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ThierryGandilhon/ais-decoder/issues"
+  },
+  "homepage": "https://github.com/ThierryGandilhon/ais-decoder#readme"
+}
