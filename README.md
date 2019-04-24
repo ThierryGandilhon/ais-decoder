@@ -1,3 +1,3 @@
 # AIS Decoder
 
-A tool to decode AIS message tra,mited using NMEA.
+A tool to decode AIS message transmited using NMEA.
