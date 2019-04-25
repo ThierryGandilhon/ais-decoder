@@ -1,7 +1,7 @@
-import { RawObject }  from './RawObject';
-import { NMEAObject } from './NMEAObject';
-
-export class NMEAObjectFactory {
+//
+//
+//
+class NMEAObjectFactory {
   process(rawObject: RawObject): NMEAObject {
     return null;
   }

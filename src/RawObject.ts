@@ -1,4 +1,7 @@
-export class RawObject {
+//
+//
+//
+class RawObject {
     prolog              : string;
     countOfFragments    : number;
     fragmentNumber      : number;

@@ -1,14 +1,10 @@
 import * as readline from "readline";
 import * as stream   from 'stream';
 
-import { NMEAObjectFactory } from './NMEAObjectFactory';
-import { NMEAObject }        from './NMEAObject';
-import { RawObject }         from './RawObject';
-
-export class NMEADecoder {
-    stream: stream.Readable;
-    nmeaObjectFactory: NMEAObjectFactory;
-    lineReader: readline.Interface;
+ export class NMEADecoder {
+    private stream: stream.Readable;
+    private nmeaObjectFactory: NMEAObjectFactory;
+    private lineReader: readline.Interface;
 
     constructor(stream: stream.Readable) {
         this.stream = stream;
@@ -23,7 +19,7 @@ export class NMEADecoder {
         this.lineReader.resume();
     }
     
-    processLine(line: string): void {  
+    private processLine(line: string): void {  
         console.log(`NMEA Sentence received: ${line}`);
 
         let nmeaObject: NMEAObject = this.nmeaObjectFactory.process(new RawObject(line));
