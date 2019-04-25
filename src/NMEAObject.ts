@@ -1,6 +1,6 @@
 //
 //
 //
-class NMEAObject {
+export class NMEAObject {
     
 }

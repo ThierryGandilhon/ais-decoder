@@ -19,7 +19,7 @@ try {
     // Create a file reader to simulate AISHUB stream from a recorded file
     let nmeaFileStream: stream.Readable = fs.createReadStream('./samples/NMEAStream.sample.txt');
 
-    let decoder: NMEADecoder = new NMEADecoder(nmeaLiveStream);
+    let decoder: NMEADecoder = new NMEADecoder(nmeaFileStream);
     decoder.process();
 } catch(e) {
     console.log(e)

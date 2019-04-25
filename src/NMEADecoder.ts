@@ -1,6 +1,10 @@
 import * as readline from "readline";
 import * as stream   from 'stream';
 
+import { RawObject }         from './RawObject';
+import { NMEAObject }        from './NMEAObject';
+import { NMEAObjectFactory } from './NMEAObjectFactory';
+
  export class NMEADecoder {
     private stream: stream.Readable;
     private nmeaObjectFactory: NMEAObjectFactory;
