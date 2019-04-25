@@ -1,3 +1,3 @@
-export declare class NMEAObject {
+export class NMEAObject {
     
 }
