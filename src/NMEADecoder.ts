@@ -24,7 +24,7 @@ import { NMEAObjectFactory } from './NMEAObjectFactory';
     }
     
     private processLine(line: string): void {  
-        console.log(`NMEA Sentence received: ${line}`);
+        // console.log(`NMEA Sentence received: ${line}`);
 
         let nmeaObject: NMEAObject = this.nmeaObjectFactory.process(new RawObject(line));
 
