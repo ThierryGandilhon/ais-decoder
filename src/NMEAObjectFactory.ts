@@ -35,7 +35,7 @@ export class NMEAObjectFactory {
 
       target.mmsi = parseInt(bitField.substring(8, 38), 2);
       //navstatus, 38-41
-      target.navigationStatus = this.navigationStatuses[parseInt(bitField.substring(38, 42), 2)];
+      target.navigationStatus = this.navigationStatus[parseInt(bitField.substring(38, 42), 2)];
       //Speed over ground, 50-59
       target.speedOverGround = (parseInt(bitField.substring(50, 60), 2)) / 10;
       //Longitude, 61-88
@@ -51,16 +51,15 @@ export class NMEAObjectFactory {
       return target;
   }
 
-  private uintToInt(uint, nbit) {
+  private uintToInt(uint:number, nbit:number):number {
     nbit = +nbit || 32;
-    if (nbit > 32) throw new RangeError('uintToInt only supports ints up to 32 bits');
+    if (nbit > 32) throw new RangeError('Only ints up to 32 bits');
     uint <<= 32 - nbit;
     uint >>= 32 - nbit;
     return uint;
   }
 
-
-private navigationStatuses = [
+  private navigationStatus:Array<string> = [
     'Under way using engine',
     'At anchor',
     'Not under command',
