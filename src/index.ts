@@ -13,13 +13,13 @@ try {
         host: 'data.aishub.net', 
         port: 4774
     }
-    let nmeaLiveSocket: net.Socket  = net.createConnection(aisHubServerOptions);
+    let nmeaLiveSocket: net.Socket      = net.createConnection(aisHubServerOptions);
     let nmeaLiveStream: stream.Readable = new stream.Readable(nmeaLiveSocket);
 
     // Create a file reader to simulate AISHUB stream from a recorded file
-    let nmeaFileStream: stream.Readable = fs.createReadStream('./samples/NMEAStream.sample.txt');
+    // let nmeaFileStream: stream.Readable = fs.createReadStream('./samples/NMEAStream.sample.txt');
 
-    let decoder: NMEADecoder = new NMEADecoder(nmeaFileStream);
+    let decoder: NMEADecoder = new NMEADecoder(nmeaLiveSocket);
     decoder.process();
 } catch(e) {
     console.log(e)

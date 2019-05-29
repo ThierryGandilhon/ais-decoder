@@ -1,7 +1,7 @@
 {
   "name": "ais-decoder",
   "version": "1.0.0",
-  "description": "Decode AIS iformation received as NMEA messages.",
+  "description": "Decode AIS information received as NMEA messages.",
   "main": "main.js",
   "dependencies": {
     "@types/node": "^11.13.7"
