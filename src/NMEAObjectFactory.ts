@@ -6,14 +6,15 @@ import { RawObject }  from './RawObject';
 import { NMEAObject } from './NMEAObject';
 
 export class NMEAObjectFactory {
-  process(rawObject: RawObject): NMEAObject {
+  
+  decode(rawObject: RawObject): NMEAObject {
     if ( ! rawObject.prolog.startsWith("!AIVDM") )
       return null;
 
     if (    rawObject.countOfFragments == 1 
          && rawObject.fragmentNumber   == 1 ) {
       // Message made of one fragment only
-      return this.decode(rawObject);      
+      return this.decodePayload(rawObject);      
     } else if ( rawObject.countOfFragments > 1) {
       // Message made of multiple fragments : store parts and rebuild full message
       //TODO 
@@ -23,7 +24,7 @@ export class NMEAObjectFactory {
     }
   }
 
-  private decode(rawObject: RawObject): NMEAObject {
+  private decodePayload(rawObject: RawObject): NMEAObject {
       var target:NMEAObject = new NMEAObject();
 
       var bitField = Array.from(rawObject.dataPayload)
