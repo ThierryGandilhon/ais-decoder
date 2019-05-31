@@ -18,6 +18,7 @@ import { ClientHttp2Session } from 'http2';
     constructor(stream: stream.Readable) {
         this.stream = stream;
         this.nmeaObjectFactory = new NMEAObjectFactory();
+        this.clients = [];
         this.lineReader = readline.createInterface({
             input: this.stream
           });  
@@ -40,7 +41,7 @@ import { ClientHttp2Session } from 'http2';
             let nmeaObjectString: string = JSON.stringify(nmeaObject);
 
             console.log(nmeaObjectString);
-            this.clients.forEach(socket => {
+            this.clients.forEach((socket:net.Socket) => {
                 socket.write(nmeaObjectString);
             });
         }
